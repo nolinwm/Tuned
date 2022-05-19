@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C7FD84A2836764E00E750EE /* TunedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7FD8492836764E00E750EE /* TunedTests.swift */; };
 		5CA63D3E28367380001A3645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA63D3D28367380001A3645 /* AppDelegate.swift */; };
 		5CA63D4028367380001A3645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA63D3F28367380001A3645 /* SceneDelegate.swift */; };
 		5CA63D4228367380001A3645 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA63D4128367380001A3645 /* ViewController.swift */; };
@@ -15,7 +16,19 @@
 		5CA63D4A28367381001A3645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CA63D4828367381001A3645 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5C7FD84B2836764E00E750EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CA63D322836737F001A3645 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CA63D392836737F001A3645;
+			remoteInfo = Tuned;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5C7FD8472836764E00E750EE /* TunedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TunedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C7FD8492836764E00E750EE /* TunedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunedTests.swift; sourceTree = "<group>"; };
 		5CA63D3A2836737F001A3645 /* Tuned.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tuned.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA63D3D28367380001A3645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CA63D3F28367380001A3645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +40,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5C7FD8442836764E00E750EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CA63D372836737F001A3645 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,10 +57,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C7FD83E2836747C00E750EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5CA63D4628367381001A3645 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5C7FD83F2836748200E750EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C7FD8402836748800E750EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5C7FD8412836748B00E750EE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5CA63D3D28367380001A3645 /* AppDelegate.swift */,
+				5CA63D3F28367380001A3645 /* SceneDelegate.swift */,
+				5CA63D4128367380001A3645 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5C7FD8422836748F00E750EE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5CA63D4328367380001A3645 /* Main.storyboard */,
+				5CA63D4828367381001A3645 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5C7FD8482836764E00E750EE /* TunedTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C7FD8492836764E00E750EE /* TunedTests.swift */,
+			);
+			path = TunedTests;
+			sourceTree = "<group>";
+		};
 		5CA63D312836737F001A3645 = {
 			isa = PBXGroup;
 			children = (
 				5CA63D3C2836737F001A3645 /* Tuned */,
+				5C7FD8482836764E00E750EE /* TunedTests */,
 				5CA63D3B2836737F001A3645 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				5CA63D3A2836737F001A3645 /* Tuned.app */,
+				5C7FD8472836764E00E750EE /* TunedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,12 +127,11 @@
 		5CA63D3C2836737F001A3645 /* Tuned */ = {
 			isa = PBXGroup;
 			children = (
-				5CA63D3D28367380001A3645 /* AppDelegate.swift */,
-				5CA63D3F28367380001A3645 /* SceneDelegate.swift */,
-				5CA63D4128367380001A3645 /* ViewController.swift */,
-				5CA63D4328367380001A3645 /* Main.storyboard */,
-				5CA63D4628367381001A3645 /* Assets.xcassets */,
-				5CA63D4828367381001A3645 /* LaunchScreen.storyboard */,
+				5C7FD8422836748F00E750EE /* Storyboards */,
+				5C7FD8412836748B00E750EE /* Controllers */,
+				5C7FD8402836748800E750EE /* Views */,
+				5C7FD83F2836748200E750EE /* Models */,
+				5C7FD83E2836747C00E750EE /* Resources */,
 				5CA63D4B28367381001A3645 /* Info.plist */,
 			);
 			path = Tuned;
@@ -70,6 +140,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5C7FD8462836764E00E750EE /* TunedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C7FD84F2836764E00E750EE /* Build configuration list for PBXNativeTarget "TunedTests" */;
+			buildPhases = (
+				5C7FD8432836764E00E750EE /* Sources */,
+				5C7FD8442836764E00E750EE /* Frameworks */,
+				5C7FD8452836764E00E750EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C7FD84C2836764E00E750EE /* PBXTargetDependency */,
+			);
+			name = TunedTests;
+			productName = TunedTests;
+			productReference = 5C7FD8472836764E00E750EE /* TunedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5CA63D392836737F001A3645 /* Tuned */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CA63D4E28367381001A3645 /* Build configuration list for PBXNativeTarget "Tuned" */;
@@ -97,6 +185,10 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					5C7FD8462836764E00E750EE = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 5CA63D392836737F001A3645;
+					};
 					5CA63D392836737F001A3645 = {
 						CreatedOnToolsVersion = 13.4;
 					};
@@ -116,11 +208,19 @@
 			projectRoot = "";
 			targets = (
 				5CA63D392836737F001A3645 /* Tuned */,
+				5C7FD8462836764E00E750EE /* TunedTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5C7FD8452836764E00E750EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CA63D382836737F001A3645 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +234,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5C7FD8432836764E00E750EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C7FD84A2836764E00E750EE /* TunedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CA63D362836737F001A3645 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +253,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C7FD84C2836764E00E750EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CA63D392836737F001A3645 /* Tuned */;
+			targetProxy = 5C7FD84B2836764E00E750EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5CA63D4328367380001A3645 /* Main.storyboard */ = {
@@ -166,6 +282,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5C7FD84D2836764E00E750EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7927LZ58S8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nolinmcfarland.TunedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tuned.app/Tuned";
+			};
+			name = Debug;
+		};
+		5C7FD84E2836764E00E750EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7927LZ58S8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nolinmcfarland.TunedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tuned.app/Tuned";
+			};
+			name = Release;
+		};
 		5CA63D4C28367381001A3645 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -216,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -339,6 +493,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5C7FD84F2836764E00E750EE /* Build configuration list for PBXNativeTarget "TunedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C7FD84D2836764E00E750EE /* Debug */,
+				5C7FD84E2836764E00E750EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5CA63D352836737F001A3645 /* Build configuration list for PBXProject "Tuned" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
