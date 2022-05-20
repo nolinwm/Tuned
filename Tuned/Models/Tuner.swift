@@ -6,12 +6,19 @@
 //
 
 import Foundation
+import AVFoundation
 import AudioKit
 import SoundpipeAudioKit
 import AudioToolbox
 
 protocol TunerDelegate: AnyObject {
     func tuner(_ tuner: Tuner, didReceive data: TunerData)
+}
+
+enum TunerError: Error {
+    case failedToInitialize
+    case failedToStart
+    case microphoneAccessDenied
 }
 
 struct TunerData {
@@ -22,21 +29,20 @@ struct TunerData {
 
 class Tuner {
     
-    let tuning: TuningStrategy
+    var tuning: TuningStrategy
     var data = TunerData()
     
     weak var delegate: TunerDelegate?
     
     let engine = AudioKit.AudioEngine()
-    let microphone: AudioEngine.InputNode
+    var microphone: AudioEngine.InputNode
     var pitchTracker: PitchTap!
     
-    init(_ tuning: TuningStrategy) {
-        self.tuning = tuning
+    init(_ tuning: TuningStrategy) throws {
         guard let input = engine.input, engine.inputDevice != nil else {
-            // TODO: Improve error handling by displaying an alert to the user
-            return
+            throw TunerError.failedToInitialize
         }
+        self.tuning = tuning
         microphone = input
         engine.output = input // Engine needs an output to initialize
         pitchTracker = PitchTap(microphone) { pitch, amplitude in
@@ -46,18 +52,21 @@ class Tuner {
         }
     }
     
-    func startTuning() {
+    func startTuning() throws {
+        guard AVAudioSession.sharedInstance().recordPermission == .granted else {
+            throw TunerError.microphoneAccessDenied
+        }
         do {
             try engine.start()
             pitchTracker.start()
         } catch {
-            // TODO: Improve error handling by displaying an alert to the user
-            fatalError("Failed to start Tuner: \(error.localizedDescription)")
+            throw TunerError.failedToStart
         }
     }
     
     func stopTuning() {
         engine.stop()
+        pitchTracker.stop()
     }
 
     func updateData(pitch: AUValue, amplitude: AUValue) {

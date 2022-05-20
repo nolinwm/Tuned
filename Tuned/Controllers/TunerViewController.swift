@@ -10,12 +10,33 @@ import UIKit
 class TunerViewController: UIViewController {
 
     @IBOutlet weak var noteLabel: UILabel!
-    let tuner = Tuner(StandardTuning())
+    @IBOutlet weak var errorLabel: UILabel!
+    var tuner: Tuner?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tuner.delegate = self
-        tuner.startTuning()
+        setupTuner()
+    }
+    
+    func setupTuner() {
+        do {
+            try tuner = Tuner(StandardTuning())
+            tuner?.delegate = self
+            try tuner?.startTuning()
+        } catch TunerError.failedToInitialize {
+            showError("Something wen't wrong!")
+        } catch TunerError.failedToStart {
+            showError("Something wen't wrong!")
+        } catch TunerError.microphoneAccessDenied {
+            showError("Tuned can't access your microphone.")
+        } catch {
+            showError("Something wen't wrong!")
+        }
+    }
+    
+    func showError(_ message: String) {
+        errorLabel.text = message
+        errorLabel.isHidden = false
     }
 }
 
