@@ -24,6 +24,7 @@
 		5CEABC9A283692DC001F9093 /* TunerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEABC99283692DC001F9093 /* TunerViewController.swift */; };
 		5CEABC9B283692DC001F9093 /* TunerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEABC99283692DC001F9093 /* TunerViewController.swift */; };
 		5CEABC9E2836A75A001F9093 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5CEABC9D2836A75A001F9093 /* AudioKit */; };
+		5CFD3F342837A63300011251 /* ChromaticScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C88CAAE2836BE420030705F /* ChromaticScale.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,6 +278,7 @@
 				5C88CAB32836E7200030705F /* TuningStrategy.swift in Sources */,
 				5CEABC9828368FCD001F9093 /* Tuner.swift in Sources */,
 				5CEABC9B283692DC001F9093 /* TunerViewController.swift in Sources */,
+				5CFD3F342837A63300011251 /* ChromaticScale.swift in Sources */,
 				5C7FD84A2836764E00E750EE /* TunedTests.swift in Sources */,
 				5C88CAAD2836BDC80030705F /* Note.swift in Sources */,
 			);
