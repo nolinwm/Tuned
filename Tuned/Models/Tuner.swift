@@ -34,7 +34,7 @@ class Tuner {
     init(_ tuning: TuningStrategy) {
         guard let input = engine.input, engine.inputDevice != nil else {
             // TODO: Improve error handling by displaying an alert to the user
-            fatalError("Failed to initialize Tuner")
+            return
         }
         self.tuning = tuning
         microphone = input
