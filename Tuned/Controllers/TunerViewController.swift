@@ -9,24 +9,31 @@ import UIKit
 
 class TunerViewController: UIViewController {
 
-    @IBOutlet weak var tuningDisplay: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var baseNoteLabel: UILabel!
     @IBOutlet weak var pitchNoteLabel: UILabel!
     @IBOutlet weak var baseCircle: UIImageView!
     @IBOutlet weak var inTuneCircle: UIImageView!
+    @IBOutlet weak var hintLabel: UILabel!
     
+    var tuning: TuningStrategy = StandardTuning() {
+        didSet {
+            navigationItem.title = tuning.name
+        }
+    }
     var tuner: Tuner?
     var animatingDidTuneNote = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tuning = StandardTuning()
         setupTuner()
     }
     
     func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.isHidden = false
+        updateHint(nil)
     }
 }
 
@@ -50,13 +57,21 @@ extension TunerViewController: TunerDelegate {
     }
     
     func tuner(_ tuner: Tuner, didReceive data: TunerData) {
+        guard !animatingDidTuneNote else { return }
         guard let note = data.note, let pitchDifference = data.pitchDifference else {
             resetDisplay()
             return
         }
         updateDisplay(noteName: note.name, pitchDifference: pitchDifference)
-        if abs(pitchDifference) < 1 {
+        if abs(pitchDifference) < 0.5 {
             didTuneNote()
+            updateHint("Perfect!")
+        } else {
+            if pitchDifference > 0 {
+                updateHint("Too sharp, tune down.")
+            } else {
+                updateHint("Too flat, tune up.")
+            }
         }
     }
 }
@@ -67,6 +82,7 @@ extension TunerViewController {
     func resetDisplay() {
         baseNoteLabel.text = ""
         pitchNoteLabel.text = ""
+        updateHint("Pluck a string.")
         pitchNoteLabel.transform = .identity
     }
     
@@ -76,9 +92,18 @@ extension TunerViewController {
         
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut) {
             self.pitchNoteLabel.transform = CGAffineTransform(
-                translationX: CGFloat(pitchDifference * abs(pitchDifference)),
+                translationX: CGFloat(pitchDifference * (pow(pitchDifference, 2))),
                 y: 0
             )
+        }
+    }
+    
+    func updateHint(_ hint: String?) {
+        if let hint = hint {
+            hintLabel.alpha = 1
+            hintLabel.text = hint
+        } else {
+            hintLabel.alpha = 0
         }
     }
     

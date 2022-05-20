@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qrf-gf-zTE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tuner View Controller-->
+        <!--Tuning-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TunerViewController" customModule="Tuned" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6h-Is-Ezg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="40"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Mp8-PE-sRh"/>
@@ -27,80 +27,116 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USJ-2P-m4h" userLabel="Tuning Display">
-                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vkg-6V-Pxc">
+                                <rect key="frame" x="20" y="249" width="374" height="398"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="Obk-wD-DTp">
-                                        <rect key="frame" x="62" y="62" width="290" height="290"/>
-                                        <color key="tintColor" systemColor="systemGray6Color"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDC-4w-mkU" userLabel="Tuning Display">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="VDZ-FF-Jv7">
+                                                <rect key="frame" x="47" y="47" width="280.5" height="280.5"/>
+                                                <color key="tintColor" systemColor="systemGray6Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="VDZ-FF-Jv7" secondAttribute="height" multiplier="1:1" id="SFa-UO-B7L"/>
+                                                </constraints>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="waz-lm-ygv">
+                                                <rect key="frame" x="47" y="47" width="280.5" height="280.5"/>
+                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64E-Bg-dPp">
+                                                <rect key="frame" x="187" y="187" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="150"/>
+                                                <color key="textColor" systemColor="systemGray4Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG5-Ny-eBo">
+                                                <rect key="frame" x="187" y="187" width="0.0" height="0.0"/>
+                                                <color key="tintColor" name="AccentColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="150"/>
+                                                <color key="textColor" systemColor="tintColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="Obk-wD-DTp" secondAttribute="height" multiplier="1:1" id="2gM-Gv-Cj2"/>
+                                            <constraint firstItem="VDZ-FF-Jv7" firstAttribute="height" secondItem="qDC-4w-mkU" secondAttribute="height" multiplier="0.75" id="5OG-bj-xqn"/>
+                                            <constraint firstAttribute="width" secondItem="qDC-4w-mkU" secondAttribute="height" multiplier="1:1" id="75H-nX-bsm"/>
+                                            <constraint firstItem="waz-lm-ygv" firstAttribute="centerY" secondItem="VDZ-FF-Jv7" secondAttribute="centerY" id="8Y8-PZ-KNk"/>
+                                            <constraint firstItem="aG5-Ny-eBo" firstAttribute="centerX" secondItem="qDC-4w-mkU" secondAttribute="centerX" id="ASy-Z4-vVD"/>
+                                            <constraint firstItem="aG5-Ny-eBo" firstAttribute="centerY" secondItem="qDC-4w-mkU" secondAttribute="centerY" id="NOb-RG-pLV"/>
+                                            <constraint firstItem="VDZ-FF-Jv7" firstAttribute="centerX" secondItem="qDC-4w-mkU" secondAttribute="centerX" id="RFd-jU-R9n"/>
+                                            <constraint firstItem="waz-lm-ygv" firstAttribute="width" secondItem="VDZ-FF-Jv7" secondAttribute="width" id="U3h-pN-wLQ"/>
+                                            <constraint firstItem="64E-Bg-dPp" firstAttribute="centerY" secondItem="qDC-4w-mkU" secondAttribute="centerY" id="W2h-pb-5Sx"/>
+                                            <constraint firstItem="VDZ-FF-Jv7" firstAttribute="centerY" secondItem="qDC-4w-mkU" secondAttribute="centerY" id="ZfL-jq-kue"/>
+                                            <constraint firstItem="waz-lm-ygv" firstAttribute="height" secondItem="VDZ-FF-Jv7" secondAttribute="height" id="mOe-hY-cdf"/>
+                                            <constraint firstItem="64E-Bg-dPp" firstAttribute="centerX" secondItem="qDC-4w-mkU" secondAttribute="centerX" id="nNX-aj-B65"/>
+                                            <constraint firstItem="waz-lm-ygv" firstAttribute="centerX" secondItem="VDZ-FF-Jv7" secondAttribute="centerX" id="s4U-uJ-GVT"/>
                                         </constraints>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="dBx-qo-EWN">
-                                        <rect key="frame" x="62" y="62" width="290" height="290"/>
-                                        <color key="tintColor" systemColor="tintColor"/>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmJ-6S-40w">
-                                        <rect key="frame" x="207" y="207" width="0.0" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="150"/>
-                                        <color key="textColor" systemColor="systemGray4Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZK-ZH-r2E">
-                                        <rect key="frame" x="207" y="207" width="0.0" height="0.0"/>
-                                        <color key="tintColor" name="AccentColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="150"/>
-                                        <color key="textColor" systemColor="tintColor"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJi-EA-Sks">
+                                        <rect key="frame" x="0.0" y="374" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="XmJ-6S-40w" firstAttribute="centerY" secondItem="USJ-2P-m4h" secondAttribute="centerY" id="A8x-RQ-og3"/>
-                                    <constraint firstItem="Obk-wD-DTp" firstAttribute="centerX" secondItem="USJ-2P-m4h" secondAttribute="centerX" id="Bm2-nA-0tT"/>
-                                    <constraint firstItem="dBx-qo-EWN" firstAttribute="centerX" secondItem="Obk-wD-DTp" secondAttribute="centerX" id="ERu-JS-3cn"/>
-                                    <constraint firstItem="WZK-ZH-r2E" firstAttribute="centerY" secondItem="USJ-2P-m4h" secondAttribute="centerY" id="H9u-G5-hEM"/>
-                                    <constraint firstItem="XmJ-6S-40w" firstAttribute="centerX" secondItem="USJ-2P-m4h" secondAttribute="centerX" id="TIp-nc-3wf"/>
-                                    <constraint firstAttribute="width" secondItem="USJ-2P-m4h" secondAttribute="height" multiplier="1:1" id="Vfh-fQ-Xze"/>
-                                    <constraint firstItem="dBx-qo-EWN" firstAttribute="centerY" secondItem="Obk-wD-DTp" secondAttribute="centerY" id="cRO-wG-SCo"/>
-                                    <constraint firstItem="dBx-qo-EWN" firstAttribute="width" secondItem="Obk-wD-DTp" secondAttribute="width" id="jEe-Bf-AFU"/>
-                                    <constraint firstItem="Obk-wD-DTp" firstAttribute="centerY" secondItem="USJ-2P-m4h" secondAttribute="centerY" id="owF-Dx-rug"/>
-                                    <constraint firstItem="dBx-qo-EWN" firstAttribute="height" secondItem="Obk-wD-DTp" secondAttribute="height" id="pg2-cc-Upf"/>
-                                    <constraint firstItem="Obk-wD-DTp" firstAttribute="height" secondItem="USJ-2P-m4h" secondAttribute="height" multiplier="0.7" id="sNz-zp-9ai"/>
-                                    <constraint firstItem="WZK-ZH-r2E" firstAttribute="centerX" secondItem="USJ-2P-m4h" secondAttribute="centerX" id="ugC-QY-MLM"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P6h-Is-Ezg" secondAttribute="trailing" id="2TB-vU-4Vd"/>
-                            <constraint firstItem="USJ-2P-m4h" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="L8g-mf-axg"/>
-                            <constraint firstItem="USJ-2P-m4h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NEY-ZW-lcJ"/>
-                            <constraint firstItem="USJ-2P-m4h" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Q1b-Mr-NZs"/>
                             <constraint firstItem="P6h-Is-Ezg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sxi-0b-wBl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vkg-6V-Pxc" secondAttribute="trailing" constant="20" id="V3o-w0-Td6"/>
                             <constraint firstItem="P6h-Is-Ezg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="YAv-2v-zIs"/>
+                            <constraint firstItem="vkg-6V-Pxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="esH-H0-s92"/>
+                            <constraint firstItem="vkg-6V-Pxc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vlc-q2-aZ8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Tuning" largeTitleDisplayMode="always" id="b7T-Gq-IH6">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="slider.horizontal.3" catalog="system" id="VcH-sT-Lng"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="baseCircle" destination="Obk-wD-DTp" id="HUI-6n-iNs"/>
-                        <outlet property="baseNoteLabel" destination="XmJ-6S-40w" id="icq-1F-fzu"/>
+                        <outlet property="baseCircle" destination="VDZ-FF-Jv7" id="qjZ-hh-Z4j"/>
+                        <outlet property="baseNoteLabel" destination="64E-Bg-dPp" id="hMX-iy-3OA"/>
                         <outlet property="errorLabel" destination="P6h-Is-Ezg" id="dZ1-tW-oze"/>
-                        <outlet property="inTuneCircle" destination="dBx-qo-EWN" id="VAU-gF-ewt"/>
-                        <outlet property="pitchNoteLabel" destination="WZK-ZH-r2E" id="Wgn-v7-kDw"/>
-                        <outlet property="tuningDisplay" destination="USJ-2P-m4h" id="qmA-pQ-i3G"/>
+                        <outlet property="hintLabel" destination="tJi-EA-Sks" id="TNd-1M-6Do"/>
+                        <outlet property="inTuneCircle" destination="waz-lm-ygv" id="enW-Rw-RgD"/>
+                        <outlet property="pitchNoteLabel" destination="aG5-Ny-eBo" id="0Z4-Sb-gv6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="124.55357142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nUE-Lq-ckT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qrf-gf-zTE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="WFK-HM-zpw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4zw-CG-tTG">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ePP-L5-ISu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="avm-VP-sim" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
         </scene>
     </scenes>
     <resources>
         <image name="Circle" width="1024" height="1024"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

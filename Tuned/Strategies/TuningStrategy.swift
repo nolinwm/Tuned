@@ -13,7 +13,7 @@ protocol TuningStrategy {
 }
 
 struct StandardTuning: TuningStrategy {
-    var name = "Standard Tuning"
+    var name = "Standard"
     var semitones = [
         ChromaticScale.Semitone.e(2),
         ChromaticScale.Semitone.a(2),
