@@ -53,6 +53,13 @@ class Tuner {
     }
     
     func startTuning() throws {
+        /*
+            This presents an issue in that when recordPermission is undetermined, like
+            when opening the app for the first time, it throws a denied error before giving
+            the user a chance to allow.
+            // TODO: Better handling of microphone access
+         */
+    
         guard AVAudioSession.sharedInstance().recordPermission == .granted else {
             throw TunerError.microphoneAccessDenied
         }
