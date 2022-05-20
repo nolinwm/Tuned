@@ -69,13 +69,25 @@ class Tuner {
         pitchTracker.stop()
     }
 
-    func updateData(pitch: AUValue, amplitude: AUValue) {
+    private func updateData(pitch: AUValue, amplitude: AUValue) {
         guard amplitude > 0.1 else {
             data = TunerData()
             delegate?.tuner(self, didReceive: data)
             return
         }
         
+        let semitone = nearestSemitone(for: pitch, in: tuning)
+        let note = ChromaticScale.note(for: semitone)
+        let pitchDifference = pitch - Float(note.frequency)
+        
+        data.pitch = pitch
+        data.note = note
+        data.pitchDifference = pitchDifference
+        
+        delegate?.tuner(self, didReceive: data)
+    }
+    
+    private func nearestSemitone(for pitch: Float, in tuning: TuningStrategy) -> ChromaticScale.Semitone {
         var nearestSemitoneIndex = 0
         for index in 0..<tuning.semitones.count {
             let note = ChromaticScale.note(for: tuning.semitones[index])
@@ -88,21 +100,11 @@ class Tuner {
             let lowerNote = ChromaticScale.note(for: tuning.semitones[nearestSemitoneIndex])
             let higherNote = ChromaticScale.note(for: tuning.semitones[nearestSemitoneIndex + 1])
             let midpoint: Float = Float(lowerNote.frequency + higherNote.frequency) / 2
-            
             if pitch > midpoint {
                 nearestSemitoneIndex += 1
             }
         }
         
-        let nearestSemitone = tuning.semitones[nearestSemitoneIndex]
-        let note = ChromaticScale.note(for: nearestSemitone)
-        
-        let pitchDifference = pitch - Float(note.frequency)
-        
-        data.pitch = pitch
-        data.note = note
-        data.pitchDifference = pitchDifference
-        
-        delegate?.tuner(self, didReceive: data)
+        return tuning.semitones[nearestSemitoneIndex]
     }
 }
