@@ -32,11 +32,11 @@ class Tuner {
     var pitchTracker: PitchTap!
     
     init(_ tuning: TuningStrategy) {
+        self.tuning = tuning
         guard let input = engine.input, engine.inputDevice != nil else {
             // TODO: Improve error handling by displaying an alert to the user
             return
         }
-        self.tuning = tuning
         microphone = input
         engine.output = input // Engine needs an output to initialize
         pitchTracker = PitchTap(microphone) { pitch, amplitude in
