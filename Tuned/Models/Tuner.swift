@@ -77,7 +77,7 @@ class Tuner {
     }
 
     private func updateData(pitch: AUValue, amplitude: AUValue) {
-        guard amplitude > 0.1 else {
+        guard amplitude > 0.125 else {
             data = TunerData()
             delegate?.tuner(self, didReceive: data)
             return
