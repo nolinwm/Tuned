@@ -19,6 +19,8 @@
 		5CA63D4528367380001A3645 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CA63D4328367380001A3645 /* Main.storyboard */; };
 		5CA63D4728367381001A3645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CA63D4628367381001A3645 /* Assets.xcassets */; };
 		5CA63D4A28367381001A3645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CA63D4828367381001A3645 /* LaunchScreen.storyboard */; };
+		5CBAE365283BD7D200C398B3 /* SelectTuningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAE364283BD7D200C398B3 /* SelectTuningViewController.swift */; };
+		5CBAE366283BD7D200C398B3 /* SelectTuningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAE364283BD7D200C398B3 /* SelectTuningViewController.swift */; };
 		5CEABC9728368FCD001F9093 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEABC9628368FCD001F9093 /* Tuner.swift */; };
 		5CEABC9828368FCD001F9093 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEABC9628368FCD001F9093 /* Tuner.swift */; };
 		5CEABC9A283692DC001F9093 /* TunerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEABC99283692DC001F9093 /* TunerViewController.swift */; };
@@ -50,6 +52,7 @@
 		5CA63D4628367381001A3645 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CA63D4928367381001A3645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CA63D4B28367381001A3645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CBAE364283BD7D200C398B3 /* SelectTuningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTuningViewController.swift; sourceTree = "<group>"; };
 		5CEABC9628368FCD001F9093 /* Tuner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
 		5CEABC99283692DC001F9093 /* TunerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +108,7 @@
 				5CA63D3D28367380001A3645 /* AppDelegate.swift */,
 				5CA63D3F28367380001A3645 /* SceneDelegate.swift */,
 				5CEABC99283692DC001F9093 /* TunerViewController.swift */,
+				5CBAE364283BD7D200C398B3 /* SelectTuningViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -277,6 +281,7 @@
 			files = (
 				5C88CAB32836E7200030705F /* TuningStrategy.swift in Sources */,
 				5CEABC9828368FCD001F9093 /* Tuner.swift in Sources */,
+				5CBAE366283BD7D200C398B3 /* SelectTuningViewController.swift in Sources */,
 				5CEABC9B283692DC001F9093 /* TunerViewController.swift in Sources */,
 				5CFD3F342837A63300011251 /* ChromaticScale.swift in Sources */,
 				5C7FD84A2836764E00E750EE /* TunedTests.swift in Sources */,
@@ -294,6 +299,7 @@
 				5CEABC9A283692DC001F9093 /* TunerViewController.swift in Sources */,
 				5C88CAAF2836BE420030705F /* ChromaticScale.swift in Sources */,
 				5CA63D3E28367380001A3645 /* AppDelegate.swift in Sources */,
+				5CBAE365283BD7D200C398B3 /* SelectTuningViewController.swift in Sources */,
 				5CA63D4028367380001A3645 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -36,7 +36,7 @@ struct DropDTuning: TuningStrategy {
     ]
 }
 
-struct HalfStepDown: TuningStrategy {
+struct HalfStepDownTuning: TuningStrategy {
     var name = "Half Step Down"
     var semitones = [
         ChromaticScale.Semitone.dSharp(2),
@@ -48,7 +48,7 @@ struct HalfStepDown: TuningStrategy {
     ]
 }
 
-struct FullStepDown: TuningStrategy {
+struct FullStepDownTuning: TuningStrategy {
     var name = "Full Step Down"
     var semitones = [
         ChromaticScale.Semitone.d(2),
