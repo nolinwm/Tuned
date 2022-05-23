@@ -15,11 +15,10 @@ class TunerViewController: UIViewController {
     @IBOutlet weak var baseCircle: UIImageView!
     @IBOutlet weak var inTuneCircle: UIImageView!
     @IBOutlet weak var hintLabel: UILabel!
+    @IBOutlet weak var stringsLabel: UILabel!
     
     var tuning: TuningStrategy = StandardTuning() {
-        didSet {
-            navigationItem.title = tuning.name
-        }
+        didSet { updateTuning() }
     }
     var tuner: Tuner?
     var animatingDidTuneNote = false
@@ -63,7 +62,7 @@ extension TunerViewController: TunerDelegate {
             return
         }
         updateDisplay(noteName: note.name, pitchDifference: pitchDifference)
-        if abs(pitchDifference) < 0.5 {
+        if abs(pitchDifference) < 0.4 {
             didTuneNote()
             updateHint("Perfect!")
         } else {
@@ -78,6 +77,16 @@ extension TunerViewController: TunerDelegate {
 
 // MARK: - TuningDisplay Methods
 extension TunerViewController {
+    
+    func updateTuning() {
+        navigationItem.title = tuning.name
+        var strings = ""
+        for semitone in tuning.semitones {
+            let note = ChromaticScale.note(for: semitone)
+            strings += "\(note.name) "
+        }
+        stringsLabel.text = strings
+    }
     
     func resetDisplay() {
         baseNoteLabel.text = ""

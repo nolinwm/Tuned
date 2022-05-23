@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6h-Is-Ezg">
-                                <rect key="frame" x="0.0" y="140" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="183.5" width="414" height="40"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Mp8-PE-sRh"/>
@@ -28,13 +28,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-22" translatesAutoresizingMaskIntoConstraints="NO" id="vkg-6V-Pxc">
-                                <rect key="frame" x="20" y="260" width="374" height="376"/>
+                                <rect key="frame" x="20" y="259" width="374" height="378.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDC-4w-mkU" userLabel="Tuning Display">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="VDZ-FF-Jv7">
-                                                <rect key="frame" x="47" y="47" width="280.5" height="280.5"/>
+                                                <rect key="frame" x="47" y="46.5" width="280.5" height="280.5"/>
                                                 <color key="tintColor" systemColor="systemGray6Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="VDZ-FF-Jv7" secondAttribute="height" multiplier="1:1" id="SFa-UO-B7L"/>
@@ -42,7 +42,7 @@
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="waz-lm-ygv">
-                                                <rect key="frame" x="47" y="47" width="280.5" height="280.5"/>
+                                                <rect key="frame" x="47" y="46.5" width="280.5" height="280.5"/>
                                                 <color key="tintColor" systemColor="tintColor"/>
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default"/>
                                             </imageView>
@@ -77,21 +77,30 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJi-EA-Sks">
-                                        <rect key="frame" x="0.0" y="352" width="374" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="352" width="374" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E A D G B E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuC-VE-QZ9">
+                                <rect key="frame" x="20" y="140" width="374" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P6h-Is-Ezg" secondAttribute="trailing" id="2TB-vU-4Vd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DuC-VE-QZ9" secondAttribute="trailing" constant="20" id="8a9-FW-jmN"/>
+                            <constraint firstItem="DuC-VE-QZ9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CKl-Eq-sPT"/>
+                            <constraint firstItem="P6h-Is-Ezg" firstAttribute="top" secondItem="DuC-VE-QZ9" secondAttribute="bottom" constant="10" id="MKp-Lz-lyy"/>
+                            <constraint firstItem="DuC-VE-QZ9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Mgs-IY-Ahn"/>
                             <constraint firstItem="P6h-Is-Ezg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sxi-0b-wBl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vkg-6V-Pxc" secondAttribute="trailing" constant="20" id="V3o-w0-Td6"/>
-                            <constraint firstItem="P6h-Is-Ezg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="YAv-2v-zIs"/>
                             <constraint firstItem="vkg-6V-Pxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="esH-H0-s92"/>
                             <constraint firstItem="vkg-6V-Pxc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vlc-q2-aZ8"/>
                         </constraints>
@@ -106,6 +115,7 @@
                         <outlet property="hintLabel" destination="tJi-EA-Sks" id="TNd-1M-6Do"/>
                         <outlet property="inTuneCircle" destination="waz-lm-ygv" id="enW-Rw-RgD"/>
                         <outlet property="pitchNoteLabel" destination="aG5-Ny-eBo" id="0Z4-Sb-gv6"/>
+                        <outlet property="stringsLabel" destination="DuC-VE-QZ9" id="UeU-Q3-ita"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
