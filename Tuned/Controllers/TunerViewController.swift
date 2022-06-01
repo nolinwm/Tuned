@@ -29,10 +29,35 @@ class TunerViewController: UIViewController {
         setupTuner()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = "Tuner"
+    }
+    
     func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.isHidden = false
         updateHint(nil)
+    }
+    
+    func updateTuning() {
+        navigationItem.title = tuning.name
+        var strings = ""
+        for semitone in tuning.semitones {
+            let note = ChromaticScale.note(for: semitone)
+            strings += "\(note.name) "
+        }
+        stringsLabel.text = strings
+        tuner?.tuning = tuning
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? SelectTuningViewController {
+            vc.initialTuning = tuning
+            vc.completion = { newTuning in
+                self.tuning = newTuning
+            }
+        }
     }
 }
 
@@ -77,16 +102,6 @@ extension TunerViewController: TunerDelegate {
 
 // MARK: - TuningDisplay Methods
 extension TunerViewController {
-    
-    func updateTuning() {
-        navigationItem.title = tuning.name
-        var strings = ""
-        for semitone in tuning.semitones {
-            let note = ChromaticScale.note(for: semitone)
-            strings += "\(note.name) "
-        }
-        stringsLabel.text = strings
-    }
     
     func resetDisplay() {
         baseNoteLabel.text = ""

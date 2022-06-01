@@ -106,7 +106,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tuning" largeTitleDisplayMode="always" id="b7T-Gq-IH6">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="slider.horizontal.3" catalog="system" id="VcH-sT-Lng"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="slider.horizontal.3" catalog="system" id="VcH-sT-Lng">
+                            <connections>
+                                <segue destination="eh7-Qo-Y0d" kind="show" id="kMM-2F-deZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="baseCircle" destination="VDZ-FF-Jv7" id="qjZ-hh-Z4j"/>
@@ -121,6 +125,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="124.55357142857142"/>
+        </scene>
+        <!--Select Tuning-->
+        <scene sceneID="6hY-ik-PBJ">
+            <objects>
+                <viewController id="eh7-Qo-Y0d" customClass="SelectTuningViewController" customModule="Tuned" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lte-gn-gNp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sDg-GY-kKY">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tuningCell" rowHeight="60" id="t36-Qy-Ebh">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t36-Qy-Ebh" id="P20-An-MkA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQ4-8c-m9H">
+                                                    <rect key="frame" x="20" y="11" width="374" height="38"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" verticalHuggingPriority="251" text="Standard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Z0-aa-7OE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="286.5" height="38"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E A D G B E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBY-MR-l27">
+                                                            <rect key="frame" x="286.5" y="0.0" width="87.5" height="38"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UQ4-8c-m9H" secondAttribute="trailing" id="Adq-J1-UNr"/>
+                                                <constraint firstItem="UQ4-8c-m9H" firstAttribute="top" secondItem="P20-An-MkA" secondAttribute="topMargin" id="HYe-X6-Heq"/>
+                                                <constraint firstItem="UQ4-8c-m9H" firstAttribute="leading" secondItem="P20-An-MkA" secondAttribute="leadingMargin" id="iKH-dl-sHk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UQ4-8c-m9H" secondAttribute="bottom" id="mjj-Og-VcU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G0e-i0-rqf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="G0e-i0-rqf" firstAttribute="trailing" secondItem="sDg-GY-kKY" secondAttribute="trailing" id="RS9-hU-nfV"/>
+                            <constraint firstItem="sDg-GY-kKY" firstAttribute="leading" secondItem="G0e-i0-rqf" secondAttribute="leading" id="SFP-8c-Hch"/>
+                            <constraint firstItem="sDg-GY-kKY" firstAttribute="top" secondItem="G0e-i0-rqf" secondAttribute="top" id="VeO-wq-HhC"/>
+                            <constraint firstItem="G0e-i0-rqf" firstAttribute="bottom" secondItem="sDg-GY-kKY" secondAttribute="bottom" id="sG9-X8-ZdS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Tuning" largeTitleDisplayMode="never" id="Omz-5t-wbj">
+                        <barButtonItem key="backBarButtonItem" title="Tuner" id="YLJ-HW-iDo"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="sDg-GY-kKY" id="m5x-cy-wh6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W3v-kc-AHj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1933" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nUE-Lq-ckT">
